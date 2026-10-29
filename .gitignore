@@ -50,3 +50,8 @@ app.*.map.json
 # Prototipe lama (berisi profil browser pribadi di .dart_tool/chrome-device
 # serta artefak build 167 MB) — tidak ikut diunggah ke repositori
 flutter_application_1/
+
+# Hasil pemeriksaan Archify — berisi path absolut lokal, jangan dipublikasikan
+.archify/**/*.finalize*.json
+.archify/**/*.browser-check.json
+.archify/**/*.delivery.json

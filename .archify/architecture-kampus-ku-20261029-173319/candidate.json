@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Arsitektur Aplikasi KampusKu",
+    "locale": "id",
+    "output": ".archify/architecture-kampus-ku-20261029-173319/kampus-ku-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "git@github.com:lenathea913/Prototipe-Sistem-Akademik-Kampus.git",
+      "provider": "github",
+      "link_mode": "local-only",
+      "revision": "7132e8ff9bb9148f5527c9e12d264f22db881db6"
+    }
+  },
+  "components": [
+    {
+      "id": "pengguna",
+      "type": "external",
+      "label": "Mahasiswa",
+      "sublabel": "pengguna aplikasi",
+      "icon": "person",
+      "pos": [40, 40],
+      "size": [140, 64],
+      "sources": [{ "path": "README.md", "line": 3 }]
+    },
+    {
+      "id": "app",
+      "type": "frontend",
+      "label": "KampusKuApp",
+      "sublabel": "bootstrap + tema + orientasi",
+      "pos": [230, 40],
+      "size": [170, 64],
+      "sources": [{ "path": "lib/main.dart", "line": 26, "end_line": 49 }]
+    },
+    {
+      "id": "login",
+      "type": "frontend",
+      "label": "LoginScreen",
+      "sublabel": "form + validasi NIM/sandi",
+      "pos": [230, 150],
+      "size": [170, 76],
+      "sources": [
+        { "path": "lib/screens/login_screen.dart", "line": 35, "end_line": 66 },
+        { "path": "lib/screens/login_screen.dart", "line": 86 }
+      ]
+    },
+    {
+      "id": "dashboard",
+      "type": "frontend",
+      "label": "DashboardScreen",
+      "sublabel": "IndexedStack + 5 tab",
+      "pos": [230, 510],
+      "size": [170, 80],
+      "sources": [
+        { "path": "lib/screens/dashboard_screen.dart", "line": 44 },
+        { "path": "lib/screens/dashboard_screen.dart", "line": 57, "end_line": 86 }
+      ]
+    },
+    {
+      "id": "jadwal",
+      "type": "frontend",
+      "label": "Layar Jadwal",
+      "sublabel": "filter hari via chip",
+      "pos": [470, 360],
+      "size": [170, 64],
+      "sources": [{ "path": "lib/screens/jadwal_screen.dart", "line": 42, "end_line": 45 }]
+    },
+    {
+      "id": "nilai",
+      "type": "frontend",
+      "label": "Layar Nilai",
+      "sublabel": "IPK + rincian nilai",
+      "pos": [470, 440],
+      "size": [170, 64],
+      "sources": [{ "path": "lib/screens/nilai_screen.dart", "line": 36, "end_line": 39 }]
+    },
+    {
+      "id": "presensi",
+      "type": "frontend",
+      "label": "Layar Presensi",
+      "sublabel": "riwayat 2 pekan",
+      "pos": [470, 520],
+      "size": [170, 64],
+      "sources": [{ "path": "lib/screens/presensi_screen.dart", "line": 33, "end_line": 36 }]
+    },
+    {
+      "id": "profil",
+      "type": "frontend",
+      "label": "Layar Profil",
+      "sublabel": "data user + logout",
+      "pos": [470, 600],
+      "size": [170, 64],
+      "sources": [{ "path": "lib/screens/profil_screen.dart", "line": 31, "end_line": 35 }]
+    },
+    {
+      "id": "krs",
+      "type": "frontend",
+      "label": "Layar KRS",
+      "sublabel": "katalog + kuota 24 SKS",
+      "pos": [470, 680],
+      "size": [170, 64],
+      "sources": [
+        { "path": "lib/screens/krs_screen.dart", "line": 87, "end_line": 95 },
+        { "path": "lib/screens/krs_screen.dart", "line": 131 }
+      ]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "ApiService",
+      "sublabel": "HTTP + fallback \u00b7 timeout 4s",
+      "tag": "offline-first",
+      "pos": [740, 300],
+      "size": [180, 80],
+      "sources": [
+        { "path": "lib/services/api_service.dart", "line": 24 },
+        { "path": "lib/services/api_service.dart", "line": 74, "end_line": 111 }
+      ]
+    },
+    {
+      "id": "local",
+      "type": "database",
+      "label": "data_lokal.dart",
+      "sublabel": "katalog + data contoh",
+      "pos": [740, 490],
+      "size": [180, 80],
+      "sources": [
+        { "path": "lib/data/data_lokal.dart", "line": 23 },
+        { "path": "lib/data/katalog_akademik.dart", "line": 12 }
+      ]
+    },
+    {
+      "id": "krsSvc",
+      "type": "backend",
+      "label": "KrsService",
+      "sublabel": "aturan KRS murni & teruji",
+      "pos": [740, 660],
+      "size": [180, 70],
+      "sources": [
+        { "path": "lib/services/krs_service.dart", "line": 75, "end_line": 109 },
+        { "path": "lib/services/krs_service.dart", "line": 47 }
+      ]
+    },
+    {
+      "id": "rest",
+      "type": "external",
+      "label": "REST API :8000",
+      "sublabel": "backend opsional",
+      "pos": [1010, 300],
+      "size": [160, 70],
+      "sources": [{ "path": "lib/utils/constants.dart", "line": 7 }]
+    },
+    {
+      "id": "prefs",
+      "type": "database",
+      "label": "SharedPreferences",
+      "sublabel": "token sesi + pilihan KRS",
+      "pos": [1010, 560],
+      "size": [160, 70],
+      "sources": [
+        { "path": "lib/services/api_service.dart", "line": 92 },
+        { "path": "lib/services/krs_service.dart", "line": 159, "end_line": 163 }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Aplikasi Flutter \u2014 lib/",
+      "wraps": ["app", "login", "dashboard", "jadwal", "nilai", "presensi", "profil", "krs", "api", "local", "krsSvc"],
+      "pad": 14
+    }
+  ],
+  "connections": [
+    { "id": "buka-aplikasi", "from": "pengguna", "to": "app" },
+    { "id": "bootstrap-login", "from": "app", "to": "login" },
+    { "id": "login-sukses", "from": "login", "to": "dashboard", "label": "jika sukses" },
+    {
+      "id": "login-ke-api",
+      "from": "login",
+      "to": "api",
+      "label": "login(nim, sandi)",
+      "fromSide": "right",
+      "toSide": "top",
+      "via": [[830, 188]]
+    },
+    { "id": "nav-jadwal", "from": "dashboard", "to": "jadwal", "toSide": "left" },
+    { "id": "nav-nilai", "from": "dashboard", "to": "nilai", "toSide": "left" },
+    { "id": "nav-presensi", "from": "dashboard", "to": "presensi", "toSide": "left" },
+    { "id": "nav-profil", "from": "dashboard", "to": "profil", "toSide": "left" },
+    { "id": "nav-krs", "from": "dashboard", "to": "krs", "toSide": "left" },
+    { "id": "baca-jadwal", "from": "jadwal", "to": "api", "toSide": "left" },
+    { "id": "baca-nilai", "from": "nilai", "to": "api", "toSide": "left" },
+    { "id": "baca-presensi", "from": "presensi", "to": "api", "toSide": "left" },
+    { "id": "baca-profil", "from": "profil", "to": "api", "toSide": "left" },
+    { "id": "validasi-krs", "from": "krs", "to": "krsSvc", "label": "validasi", "toSide": "left" },
+    { "id": "http-ke-backend", "from": "api", "to": "rest", "label": "timeout 4s" },
+    { "id": "fallback-lokal", "from": "api", "to": "local", "label": "fallback" },
+    { "id": "baca-katalog", "from": "krsSvc", "to": "local", "label": "katalog" },
+    { "id": "simpan-token", "from": "api", "to": "prefs", "label": "token sesi" },
+    { "id": "simpan-krs", "from": "krsSvc", "to": "prefs", "label": "simpan KRS" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Alur masuk",
+      "items": [
+        "Form tervalidasi memanggil ApiService.login; sukses lalu pushReplacement ke DashboardScreen (login_screen.dart:35-53)",
+        "Server menolak kredensial \u2192 pesan galat; server tak terjangkau \u2192 autentikasi lokal NIM/sandi prototipe (api_service.dart:74-139)"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Baca data & fallback",
+      "items": [
+        "GET /jadwal, /nilai, /presensi/history, /auth/profile; bila kosong atau server tak terjangkau layar memakai data_lokal.dart (jadwal_screen.dart:42-45, nilai_screen.dart:36-39, presensi_screen.dart:33-36, profil_screen.dart:31-35)",
+        "Beranda membaca presensiLokal untuk persentase kehadiran (dashboard_screen.dart:443)",
+        "ApiService.postPresensi tersedia tetapi belum dipanggil layar mana pun"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Aturan KRS",
+      "items": [
+        "validasiTambah berurutan: duplikat \u2192 tidak dikenal \u2192 batas 24 SKS \u2192 bentrok jadwal (krs_service.dart:75-109)",
+        "Pilihan KRS disimpan di SharedPreferences dan bertahan saat logout (krs_service.dart:159-163, api_service.dart:215-223)"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Navigasi",
+      "items": [
+        "Bottom nav 5 tab: Beranda, Jadwal, KRS, Nilai, Profil (dashboard_screen.dart:57-86)",
+        "Jadwal, Nilai, Profil, dan pintasan Presensi dibuka dengan Navigator.push dari beranda (dashboard_screen.dart:316-349, 448)"
+      ]
+    }
+  ]
+}

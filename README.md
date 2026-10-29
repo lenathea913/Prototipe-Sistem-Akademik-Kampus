@@ -1,10 +1,8 @@
 # KampusKu — Prototipe Sistem Akademik Kampus
 
-Aplikasi sistem informasi akademik cross-platform untuk mahasiswa, dibangun dengan **Flutter** sebagai proyek akhir mata kuliah Mobile Programming (Tahap 1–5).
+Aplikasi sistem informasi akademik cross-platform untuk mahasiswa, dibangun dengan **Flutter**
 
 **Judul:** Prototipe Sistem Akademik Kampus Flutter dengan Arsitektur Offline-First dan Evaluasi Konsistensi Sinkronisasi
-
-**Anggota B2:** Ryan Athallah Subekti (240605110150) · Muhammad Ainul Yakhin (240605110346) · Imam Abdul Hakim (240605110125)
 
 ## Fitur
 
